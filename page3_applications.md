@@ -24,10 +24,6 @@ These pages have been built using [R Markdown](http://rmarkdown.rstudio.com/) do
 
 
 
-### Gender Pay Equality
-
-
-
  <div class="icon-block">
    <a href="https://lecy.github.io/arnova-2017-workshop/Toolkit/">
    <h1 class="center  orange-text"><i class="medium material-icons">wc</i></h1></a>
@@ -36,9 +32,10 @@ These pages have been built using [R Markdown](http://rmarkdown.rstudio.com/) do
    <p class="center light">An introduction to some of useful tools in the data science ecosystem that will greatly enhance and accelerate the research process. This section covers data-driven documents, APIs, geo-spatial tools, and R packages.</p>
 </div>
 
-<br>
-------------------------------------------------------------------  
+<br> 
 
+------------------------------------------------------------------   
+ 
 
 
 
@@ -60,8 +57,9 @@ These pages have been built using [R Markdown](http://rmarkdown.rstudio.com/) do
 </div>
 </div>
 
-<br>
------------------------------------------  
+<br> 
+
+-----------------------------------------   
 
 
 
