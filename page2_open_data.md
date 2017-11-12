@@ -31,7 +31,7 @@ permalink: /OpenData/
 
 
 <div class="icon-block">
-   <h1 class="center black-text" style="font-size:60px;"><i class="large material-icons">blur_on</i></h1>
+   <h1 class="center black-text" style="font-size:2000px;"><i class="large material-icons">blur_on</i></h1>
    <h1 class="center orange-text">Open Nonprofit Data</h1>
 </div>
 
