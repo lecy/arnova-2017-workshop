@@ -65,7 +65,15 @@ h1.page-title {
 p.rss-subscribe {
     margin: 0;
 }
-
 a:link {
     color: orange;
+}
+a:visited {
+    color: orange;
+}
+a:hover {
+    color: blue;
+}
+a:active {
+    color: blue;
 }
