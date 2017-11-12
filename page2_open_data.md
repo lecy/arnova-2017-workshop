@@ -8,7 +8,7 @@ permalink: /OpenData/
 <br>
 
 
-# Open Data for Nonprofit Research
+# Open Nonprofit Data
 
 
 
@@ -22,7 +22,7 @@ permalink: /OpenData/
 
 <div class="divider"></div>
 
-## NCCS Data
+### NCCS Data
 
 "The data produced by NCCS are intended for use by researchers and policy-makers in their quantitative analyses, and as a springboard for more in-depth survey or case study research."
 
@@ -33,7 +33,7 @@ permalink: /OpenData/
 
 <div class="divider"></div>
 
-## E-Filer Data
+### E-Filer Data
 
 
 
@@ -42,7 +42,7 @@ permalink: /OpenData/
 
 <div class="divider"></div>
 
-## IRS Datasets
+### IRS Datasets
 
 
 
@@ -51,7 +51,7 @@ permalink: /OpenData/
 
 <div class="divider"></div>
 
-## USA Spending
+### USA Spending
 
 
 
@@ -63,4 +63,14 @@ permalink: /OpenData/
 
 <div class="divider"></div>
 
-## Federal Audit Clearinghouse
+### Federal Audit Clearinghouse
+
+
+
+
+
+<br>
+<br>
+
+<div class="divider"></div>
+
