@@ -35,6 +35,7 @@ These pages have been built using [R Markdown](http://rmarkdown.rstudio.com/) do
 
    <p class="center light">An introduction to some of useful tools in the data science ecosystem that will greatly enhance and accelerate the research process. This section covers data-driven documents, APIs, geo-spatial tools, and R packages.</p>
 </div>
+
 ------------------------------------------------------------------  
 
 
@@ -46,9 +47,7 @@ These pages have been built using [R Markdown](http://rmarkdown.rstudio.com/) do
 <br>
 <br>
 
-------------------------------------------------------------------  
 
-### Geocoding API's
 
 <div class="icon-block">
   <div class="col s12 m4">
@@ -60,6 +59,8 @@ These pages have been built using [R Markdown](http://rmarkdown.rstudio.com/) do
 </div>
 </div>
 
+-----------------------------------------  
+
 
 
 
@@ -67,11 +68,18 @@ These pages have been built using [R Markdown](http://rmarkdown.rstudio.com/) do
 <br>
 
 
------------------------------------------------------------------- 
 
-### Interlocking Board Networks
+### 
 
+<div class="icon-block">
+  <div class="col s12 m4">
+   <a href="https://lecy.github.io/arnova-2017-workshop/Toolkit/">
+   <h1 class="center orange-text"><i class="large material-icons">people</i></h1></a>
+   <h3 class="center">Interlocking Board Networks</h3>
 
+   <p class="center light">An introduction to some of useful tools in the data science ecosystem that will greatly enhance and accelerate the research process. This section covers data-driven documents, APIs, geo-spatial tools, and R packages.</p>
+</div>
+</div>
 
 
 
