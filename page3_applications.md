@@ -28,8 +28,9 @@ These pages have been built using [R Markdown](http://rmarkdown.rstudio.com/) do
 ### Gender Pay Equality
 
 
-<a href="https://lecy.github.io/arnova-2017-workshop/Toolkit/"><h2 class="orange-text"><i class="medium material-icons">wc</i> Gender Pay Equity</h2></a>
-
+<a href="https://lecy.github.io/arnova-2017-workshop/Toolkit/"> 
+  <h2 class="orange-text"><i class="medium material-icons">wc</i> Gender Pay Equity</h2></a> 
+ 
 
 
 
@@ -44,6 +45,13 @@ These pages have been built using [R Markdown](http://rmarkdown.rstudio.com/) do
 
 ### Geocoding API's
 
+<div class="icon-block">
+   <a href="https://lecy.github.io/arnova-2017-workshop/Toolkit/">
+   <h1 class="center  blue-grey-text"><i class="material-icons">pin_drop</i></h1></a>
+   <h5 class="center">Spatial Analysis</h5>
+
+   <p class="center light">An introduction to some of useful tools in the data science ecosystem that will greatly enhance and accelerate the research process. This section covers data-driven documents, APIs, geo-spatial tools, and R packages.</p>
+</div>
 
 
 
