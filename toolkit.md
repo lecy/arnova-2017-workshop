@@ -24,7 +24,7 @@ Tools
 
 
 <div class="section">
-  <a class="waves-effect waves-light btn-large"><i class="material-icons right">motorcycle</i>Data-Driven Documents</a>
+  <a class="waves-effect orange lighten-3 btn-large"><i class="material-icons right">motorcycle</i>Data-Driven Documents</a>
 </div>
 
 <div class="divider"></div>
