@@ -36,8 +36,9 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 
 <br>
 
+<div align="center">
 <iframe src="https://player.vimeo.com/video/180644880" width="640" height="360" align="center" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-
+</div>
 
 <br>
 <br>
@@ -49,7 +50,7 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 
 
 <div class="section">
-  <a class="waves-effect orange lighten-1 btn-large"><i class="material-icons right">motorcycle</i>Data-Driven Documents</a>
+  <a class="waves-effect orange lighten-1 btn-large"><i class="material-icons left right">motorcycle</i>Data-Driven Documents</a>
 </div>
 
 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
