@@ -36,9 +36,9 @@ The basic tools you need in your tool belt.
 
 <div class="container">
 <div class="row">
-<div class="col l3 s12"></div>
-<div class="col l6 s12"><p class="center light">An introduction to some of useful tools in the data science ecosystem that will greatly enhance and accelerate the research process. This section covers data-driven documents, APIs, geo-spatial tools, and R packages.</p></div>
-<div class="col l3 s12"></div>
+<div class="col l2 s12"></div>
+<div class="col l8 s12"><p class="light">An introduction to some of useful tools in the data science ecosystem that will greatly enhance and accelerate the research process. This section covers data-driven documents, APIs, geo-spatial tools, and R packages.</p></div>
+<div class="col l2 s12"></div>
 </div>
 </div>
 
@@ -57,8 +57,19 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 
 
 
+<div class="icon-block">
+   <a href="https://player.vimeo.com/video/180644880">
+   <h1 class="center  orange-text"><i class="medium material-icons">motorcycle</i></h1></a>
+   <h3 class="center">Data-Driven Documents</h3>
+</div>
 
-<div class="divider"></div>
+<div class="container">
+<div class="row">
+<div class="col l1 s12"></div>
+<div class="col l3 s12"><p class="light">An introduction to some of useful tools in the data science ecosystem that will greatly enhance and accelerate the research process. This section covers data-driven documents, APIs, geo-spatial tools, and R packages.</p></div>
+<div class="col l11 s12"></div>
+</div>
+</div>
 
 
 <div class="section">
