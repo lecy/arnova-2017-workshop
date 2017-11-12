@@ -28,9 +28,7 @@ These pages have been built using [R Markdown](http://rmarkdown.rstudio.com/) do
 ### Gender Pay Equality
 
 
-<a href="https://lecy.github.io/arnova-2017-workshop/Toolkit/">
-<h2 class="orange-text"><i class="medium material-icons">wc</i> Gender Pay Equity</h2>
-</a>
+<a href="https://lecy.github.io/arnova-2017-workshop/Toolkit/"><h2 class="orange-text"><i class="medium material-icons">wc</i> Gender Pay Equity</h2></a>
 
 
 
