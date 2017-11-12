@@ -8,7 +8,7 @@ permalink: /applications/
 <br>
 
 
-# Examples of Research Using Data Science Tools
+# Research Using Data Science Tools
 
 
 
@@ -20,7 +20,7 @@ permalink: /applications/
 
 
 
-<div class="divider"></div>
+------------------------------------------------------------------ 
 
 ## Gender Pay Equality
 
@@ -33,8 +33,7 @@ permalink: /applications/
 
 <br>
 <br>
-
-<div class="divider"></div>
+------------------------------------------------------------------ 
 
 ## Geocoding API's
 
@@ -46,10 +45,8 @@ permalink: /applications/
 <br>
 <br>
 
-<div class="divider"></div>
 
------  
-
+------------------------------------------------------------------ 
 
 ## Interlocking Board Networks
 
@@ -60,7 +57,7 @@ permalink: /applications/
 <br>
 <br>
 
-<div class="divider"></div>
+------------------------------------------------------------------ 
 
 ## Census Data
 
