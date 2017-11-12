@@ -12,7 +12,9 @@ permalink: /applications/
 
 <p class="center light">Examples of research that use tools from the data science toolkit.</p> 
 
-These pages have been built using [R Markdown](http://rmarkdown.rstudio.com/) documents.
+<br>
+
+<p class="center light">These pages have been built using [R Markdown](http://rmarkdown.rstudio.com/) documents.</p>
 
 
 <br>
