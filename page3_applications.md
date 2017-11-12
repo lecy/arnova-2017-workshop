@@ -63,7 +63,7 @@ These pages have been built using [R Markdown](http://rmarkdown.rstudio.com/) do
 
 ------------------------------------------------------------------ 
 
-## Census Data
+### Census Data
 
 Straight-forward recipe to use the Census Data API to quickly generate demographic data for a study.
 
