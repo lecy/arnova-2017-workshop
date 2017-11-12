@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Applications
+title: Research Vignettes
 permalink: /applications/
 ---
 
@@ -8,8 +8,11 @@ permalink: /applications/
 <br>
 
 
-## Research Using Data Science Tools
+## Research Vignettes
 
+Examples of research that use tools from the data science toolkit. 
+
+These pages have been built using [R Markdown](http://rmarkdown.rstudio.com/) documents.
 
 
 <br>
