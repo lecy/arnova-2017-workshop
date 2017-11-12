@@ -8,7 +8,7 @@ permalink: /applications/
 <br>
 
 
-# Research Using Data Science Tools
+## Research Using Data Science Tools
 
 
 
@@ -18,37 +18,38 @@ permalink: /applications/
 
 
 
+
+
+------------------------------------------------------------------  
+
+### Gender Pay Equality
+
+
+
+
+
+
+
+
+<br>
+<br>
+
+------------------------------------------------------------------  
+
+### Geocoding API's
+
+
+
+
+
+
+<br>
+<br>
 
 
 ------------------------------------------------------------------ 
 
-## Gender Pay Equality
-
-
-
-
-
-
-
-
-<br>
-<br>
------------------------------------------------------------------- 
-
-## Geocoding API's
-
-
-
-
-
-
-<br>
-<br>
-
-
------------------------------------------------------------------- 
-
-## Interlocking Board Networks
+### Interlocking Board Networks
 
 
 
@@ -62,5 +63,13 @@ permalink: /applications/
 ## Census Data
 
 Straight-forward recipe to use the Census Data API to quickly generate demographic data for a study.
+
+
+
+<br>
+<br>
+
+<br>
+<br>
 
 
