@@ -13,7 +13,7 @@ permalink: /OpenData/
 
 
 <div class="icon-block">
-   <i class="large material-icons">blur_on</i>
+   <h1 class="center black-text font-size: 60px"><i class="large material-icons">blur_on</i></h1>
    <h1 class="center orange-text">Open Nonprofit Data</h1>
 </div>
 
