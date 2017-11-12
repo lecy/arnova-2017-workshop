@@ -7,37 +7,14 @@ permalink: /OpenData/
 <br>
 <br>
 
-
-<br>
-<br>
-
-
 <div class="icon-block">
-   <h1 class="center black-text"><i class="large material-icons">blur_on</i></h1>
+   <h1 class="center black-text" style="font-size:160px;"><i class="large material-icons">blur_on</i></h1>
    <h1 class="center orange-text">Open Nonprofit Data</h1>
 </div>
 
 
 <br>
 <br>
-
-<div class="icon-block">
-   <font size="24"><i class="large material-icons">blur_on</i></font>
-   <h1 class="center orange-text">Open Nonprofit Data</h1>
-</div>
-
-<br>
-<br>
-
-
-<div class="icon-block">
-   <h1 class="center black-text" style="font-size:200px;"><i class="large material-icons">blur_on</i></h1>
-   <h1 class="center orange-text">Open Nonprofit Data</h1>
-</div>
-
-
-
-
 <br>
 <br>
 
