@@ -14,7 +14,7 @@ permalink: /OpenData/
 
 <div class="icon-block">
    <a href="https://player.vimeo.com/video/180644880"><i class="large material-icons">blur_on</i></a>
-   <h3 class="center orange-text">Open Nonprofit Data</h3>
+   <h1 class="center orange-text">Open Nonprofit Data</h1>
 </div>
 
 
