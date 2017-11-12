@@ -13,7 +13,8 @@ permalink: /OpenData/
 
 
 <div class="icon-block">
-   <a href="https://player.vimeo.com/video/180644880"><i class="large material-icons">blur_on</i></a>
+   <a href="https://player.vimeo.com/video/180644880">
+     <h1 class="center  black-text"><i class="large material-icons">blur_on</i></h1></a>
    <h1 class="center orange-text">Open Nonprofit Data</h1>
 </div>
 
@@ -22,12 +23,7 @@ permalink: /OpenData/
 <br>
 
 
-# Open Nonprofit Data
 
-
-
-<br>
-<br>
 
 
 
