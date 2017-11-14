@@ -37,7 +37,7 @@ If you wish to embrace the <a href="http://openscience.org/what-exactly-is-open-
 
 
 <div class="icon-block">
-   <a href="https://player.vimeo.com/video/180644880">
+   <a href="https://www.rstudio.com/products/RStudio/">
    <h1 class="center  orange-text"><i class="medium material-icons">polymer</i></h1></a>
    <h3 class="center">Data Programming</h3>
 </div>
@@ -55,7 +55,7 @@ Check out <a href="https://player.vimeo.com/video/180644880" target="_blank">R i
 <br><br>
 These are useful <a href="https://www.statmethods.net/r-tutorial/index.html" target="_blank">cheat sheets</a>.
 <br><br>
-Try this <a href="https://www.statmethods.net/r-tutorial/index.html" target="_blank">tutorial</a> or this <a href="https://www.datacamp.com/courses/free-introduction-to-r" target="_blank">free course</a>. 
+Try this <a href="https://www.statmethods.net/r-tutorial/index.html" target="_blank">tutorial</a> or this <a href="https://www.datacamp.com/courses/free-introduction-to-r" target="_blank">free intro course</a>. 
 
 </p></div>
 <div class="col l1 s12"></div>
