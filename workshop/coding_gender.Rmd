@@ -1,5 +1,4 @@
 ---
-title: "Coding Gender of Nonprofit Leaders"
 author: "Jesse Lecy"
 output:
   html_document:
@@ -7,7 +6,7 @@ output:
     highlight: haddock
 ---
 
-
+# Coding Gender of Nonprofit Leaders
 
 ```{r setup, include=FALSE}
 
