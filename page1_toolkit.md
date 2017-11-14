@@ -11,6 +11,19 @@ permalink: /Toolkit/
 
 <h2 class="center orange-text">The Data Science Toolkit</h2>
 
+<div class="container">
+<div class="row">
+<div class="col l1 s12"></div>
+<div class="col l10 s12"><p class="light">
+  
+Data science is an emerging field that combines data analysis with computer programming to provide practical insights for organizations and social problems. See a nice overview [ here[](http://datasmart.ash.harvard.edu/news/article/the-rise-of-the-data-scientists-611) ].
+<br><br>
+
+</p></div>
+<div class="col l1 s12"></div>
+</div>
+</div>
+
 
 <p class="center light">
 What is data science? 
