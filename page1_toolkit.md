@@ -16,7 +16,7 @@ permalink: /Toolkit/
 <div class="col l1 s12"></div>
 <div class="col l10 s12"><p class="light">
   
-Data science is an emerging field that combines data analysis with computer programming to provide practical insights for organizations and social problems. See a nice overview [ here[](http://datasmart.ash.harvard.edu/news/article/the-rise-of-the-data-scientists-611) ].
+Data science is an emerging field that combines data analysis with computer programming to provide practical insights for organizations and social problems. See a nice overview [ <a href="http://datasmart.ash.harvard.edu/news/article/the-rise-of-the-data-scientists-611">HERE</a> ].
 <br><br>
 
 </p></div>
@@ -85,6 +85,8 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 <div class="col l10 s12"><p class="light">
   
 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+[ <a href="workshop/urban_markdown_example.html">LINK</a> ]
 
 </p></div>
 <div class="col l1 s12"></div>
