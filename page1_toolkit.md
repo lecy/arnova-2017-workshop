@@ -107,7 +107,7 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 <br> 
 
 <div class="icon-block">
-   <a href="">
+   <a href="https://hrecht.github.io/censusapi/articles/getting-started.html">
    <h1 class="center  orange-text"><i class="medium material-icons">compare_arrows</i></h1></a>
    <h3 class="center">Data API's</h3>
 </div>
