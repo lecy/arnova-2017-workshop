@@ -3,7 +3,7 @@ output:
   html_document:
     css: assets/styles.css
     self_contained: TRUE
-    code_folding: show
+    code_folding: hide
     toc: TRUE
     toc_float: TRUE
 ---
@@ -48,7 +48,8 @@ options(scipen = 999)
 The code presented in this document is used to create an updated version of "Figure 1: Number and Expenses of Reporting Public Charities as a Percentage of All Reporting Public Charities and Expenses" from The Urban Institute's ["The Nonprofit Sector in Brief, 2015"](https://www.urban.org/research/publication/nonprofit-sector-brief-2015-public-charities-giving-and-volunteering).
 
 This figure is derived from data in the National Center for Charitable Statistics Core Files (Public Charities).  The code presented here assumes the use of the 2015 NCCS Core PC 2015 file (the most recent file available as of the time of this publication).  However, all the code is intended to be easily transferable to other years.
-
+<br>
+<br>
 
 ## Load R Libraries
 
@@ -69,9 +70,10 @@ library( extrafont )
 library( knitr )
 ```
 
+<br>
+<br>
 
-
-## Add Style Guide 
+## Add a Style Guide 
 
 The following code will use the Urban Institute's style guide as a default template for all figures created here.  Although not mandatory, it will format all figures to a similar style as that used in "The Nonprofit Sector in Brief, 2015."
 
@@ -80,18 +82,17 @@ source('https://raw.githubusercontent.com/UrbanInstitute/urban_R_theme/master/ur
 ```
 
 
+<br>
+<br>
+
+# Build the Graph
 
 
-# Creating the Graph
 
 
+### The Data
 
-
-## Skipping Data Steps
-
-The full data steps are below, but the file is large and takes a long time to download. If you want to run through the example, use the pre-generated table.
-
-See the full set of data steps below to re-create the graphic from the raw files.
+The full data steps used to generate this graphic are below, but the file is large and takes a long time to download. The data from the table of nonprofits organized by size is reproduced in this code chunk. See the full set of data steps below to re-create the graphic from the raw files.
 
 ```{r}
 
@@ -109,6 +110,7 @@ structure(list(year_of_data = c("2015", "2015", "2015", "2015",
 
 ```
 
+<br>
 <br>
 
 
@@ -129,6 +131,8 @@ caption.text <- paste("Urban Institute, National Center for Charitable Statistic
 Figure1_2015 %>%    
 
   melt() %>%       #shift from wide to long format
+  
+  filter( ! is.na(EXPCAT) ) %>%
 
   
   ggplot( aes(EXPCAT, value, fill=variable) ) +
@@ -147,14 +151,17 @@ Figure1_2015 %>%
                                  "c. $500,000 to $999,999" = "$500,000 to\n$999,999", 
                                  "d. $1 million to $4.99 million" = "$1 million to\n$4.99 million", 
                                  "e. $5 million to $9.99 million" = "$5 million to\n $9.99 million", 
-                                 "f. $10 million or more" = "$10 million\nor more") ) +
+                                 "f. $10 million or more" = "$10 million\nor more"), expand=c(0,0)  ) +
   
     scale_y_continuous(limits = c(0,100), expand = c(0, 0)) +
   
+    xlab("") +
+  
     theme( axis.title.y = element_blank(),
            axis.text.y = element_blank(),
+           axis.text.x = element_text( size=10 ),
            axis.ticks.y = element_blank(),
-           axis.title.x = element_blank(),
+           axis.title.x = element_text( "", size=16 ),
            panel.grid = element_blank() ) 
 
 ```
@@ -164,8 +171,7 @@ Figure1_2015 %>%
 <br>
 <br>
 
-Compare this figure to the figure available for 2013 data, as described in "The Nonprofit Sector in Brief, 2015":
-<https://www.urban.org/sites/default/files/publication/72536/2000497-The-Nonprofit-Sector-in-Brief-2015-Public-Charities-Giving-and-Volunteering.pdf>
+Compare this figure to the figure available for 2013 data, as described in ["The Nonprofit Sector in Brief 2015"](https://www.urban.org/sites/default/files/publication/72536/2000497-The-Nonprofit-Sector-in-Brief-2015-Public-Charities-Giving-and-Volunteering.pdf).
 
 <br>
 <br>
@@ -245,7 +251,8 @@ core2015pc <- getcorefile("http://nccs-data.urban.org/data/core/2015/nccs.core20
 ```
 
 
-
+<br>
+<br>
 
 
 ## Download File for Faster Load Time
@@ -282,7 +289,8 @@ core2015pc <- read_csv("core2015pc.csv",
 
 
 
-
+<br>
+<br>
 
 ## Create expense category groupings
 
@@ -322,7 +330,8 @@ core2015pc <-EXPclassify(core2015pc)
 While in this instance these categories are being used to define the Core 2015 PC file, the purpose of this standardized code is to make similar analysis for any other year as smooth (and reproducible) as possible.
 
 
-
+<br>
+<br>
 
 
 
@@ -380,7 +389,8 @@ The resulting table looks like this:
 kable( Figure1_2015 )
 
 ```
-
+<br>
+<br>
 
 
 
@@ -421,10 +431,11 @@ Fig1Plot( Figure1_2015 )
 
 
 ```
-
-Compare this figure to the figure available for 2013 data, as described in "The Nonprofit Sector in Brief, 2015":
-<https://www.urban.org/sites/default/files/publication/72536/2000497-The-Nonprofit-Sector-in-Brief-2015-Public-Charities-Giving-and-Volunteering.pdf>
-
+<br>
+<br>
+Compare this figure to the figure available for 2013 data, as described in ["The Nonprofit Sector in Brief 2015"](https://www.urban.org/sites/default/files/publication/72536/2000497-The-Nonprofit-Sector-in-Brief-2015-Public-Charities-Giving-and-Volunteering.pdf).
+<br>
+<br>
 
 ![](assets/images/figure1.png)
 

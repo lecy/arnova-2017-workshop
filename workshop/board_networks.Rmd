@@ -1,0 +1,441 @@
+---
+title: "igraph Examples"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message=F, warning=F, fig.width=10, fig.height=10 )
+```
+
+
+```{r}
+
+library( igraph )
+
+```
+
+
+
+# Load Data
+
+```{r, echo=F}
+
+setwd( "C:/Users/jdlecy/Dropbox/00 - Nonprofit Open Data/08 - ARNOVA Website/arnova-2017-workshop/workshop/data" )
+source( "net_data_2000.R" )
+source( "attribute_data.R" )
+
+```
+
+
+```{r}
+
+source( "https://raw.githubusercontent.com/lecy/arnova-2017-workshop/master/workshop/data/net_data_2000.R" )
+source( "https://raw.githubusercontent.com/lecy/arnova-2017-workshop/master/workshop/data/attribute_data.R" )
+
+```
+
+
+```{r}
+
+# setwd( "C:/Users/jdlecy/Dropbox/00 - Nonprofit Open Data/08 - ARNOVA Website/Net Example" )
+# dat <- read.csv( "Albany Network Ties 1998-2015.csv" )
+
+dat <- read.csv( "https://www.dropbox.com/s/03bdwvpreth5ocw/Albany%20Network%20Ties%201998-2015.csv?dl=1", stringsAsFactors=F )
+
+
+
+dat.2000 <- dat[ dat$year == 2000 , ]
+
+
+
+
+board.members <- c( dat.2000$member1, dat.2000$name )
+eins <- c( dat.2000$org1, dat.2000$ein )
+
+length( unique( eins ))  # how many nonprofits in 2000 network? 
+
+# numbers of interlocking board members by nonprofit
+# 
+# tapply( board.members, eins, function(x){ length(unique(x)) } )
+
+table( tapply( board.members, eins, function(x){ length(unique(x)) } ) )
+
+
+
+```
+
+
+# Create Attributes File
+
+```{r}
+
+attributes <- read.csv( "https://www.dropbox.com/s/6ut1hrp3sz34ejs/Albany%20NCCS%20Plus%20Net%20Stats%201998-2015.csv?dl=1", stringsAsFactors=F )
+
+# att.2000 <- attributes[ attributes$FISYR == 2000 , ]  # this is missing too many cases
+
+keep.these <- unique( c(dat.2000$ein,dat.2000$org1) )
+
+att <- attributes[ attributes$EIN %in% keep.these , ]  # select all orgs from 2000 network
+
+att <- att[ c("EIN","NAME","NTMAJ5","NTMAJ10","NTMAJ12","MAJGRPB","RULEDATE","LEVEL1","LEVEL2","LEVEL3","LEVEL4") ] # select variables
+
+att <- att[ ! duplicated( att$EIN ),  ]  # drop duplicates
+
+head( att )
+
+att$AGE <- 2000 - att$RULEDATE
+att$AGE[ att$AGE < 1 ] <- 1
+att$AGE[ att$AGE > 100 ] <- median( att$AGE, na.rm=T )
+
+
+
+```
+
+
+
+# Network from Edgelist
+
+```{r}
+
+
+# read in network ties plus attributes
+
+df <- dat[ dat$year == 2000 , c("org1","ein") ]
+
+net <- graph_from_data_frame( d=df, vertices=att, directed=F ) 
+
+
+par( mar=c(0,0,0,0) )
+plot( net, edge.arrow.size=.5, vertex.size=4, vertex.label=NA )
+
+
+
+
+```
+
+
+
+# Plotting Graphs
+
+```{r}
+
+V(net)$size <- 4
+V(net)$frame.color <- "white"
+V(net)$color <- "orange"
+V(net)$label <- "" 
+E(net)$arrow.mode <- 0
+
+par( mar=c(0,0,0,0) )
+plot( net, layout=layout_nicely(net) )
+
+
+```
+
+
+
+## Display Layout Options
+
+```{r}
+
+
+
+layouts <- grep("^layout_", ls("package:igraph"), value=TRUE)[-1] 
+
+# Remove layouts that do not apply to our graph.
+
+layouts <- layouts[!grepl("bipartite|merge|norm|sugiyama|tree", layouts)]
+
+
+par(mfrow=c(3,3), mar=c(1,1,1,1))
+
+for (layout in layouts) {
+
+  print(layout)
+
+  l <- do.call(layout, list(net)) 
+
+  plot(net, edge.arrow.mode=0, layout=l, main=layout) }
+
+
+```
+
+
+
+
+
+# Subset by Edge Count
+
+```{r}
+
+summary( degree( net, mode="all" ) )  # centrality
+
+
+
+
+keep.these <- V(net)[ degree( net, mode="all" ) > 25 ]
+
+g.sub <- induced_subgraph( graph=net, vids=keep.these )
+
+par( mar=c(0,0,0,0) )
+plot( g.sub, layout=layout_with_kk(g.sub), 
+      edge.color="gray90", 
+      vertex.label=V(g.sub)$NAME, vertex.label.cex=0.5, vertex.label.dist=1, vertex.label.color="darkgray",
+      vertex.size=15*(degree(g.sub)/max(degree(g.sub)) ) )
+
+```
+
+
+# Subset by Group
+
+```{r}
+
+# list attributes
+
+summary( net )
+
+# print group levels
+
+head( V(net)$NTMAJ5 )
+
+
+# clean up spaces
+
+V(net)$NTMAJ5 <- gsub( " ", "", V(net)$NTMAJ5 )
+
+head( V(net)$NTMAJ5 )
+
+table( V(net)$NTMAJ5, useNA="ifany" )
+
+
+
+```
+
+
+
+
+```{r}
+
+# scale between 2 and 14 for size
+
+V(net)$size <- 4 + 10*( degree( net, mode="all" ) / max(degree( net, mode="all" )) )
+
+
+keep.these <- V(net)$NTMAJ5 == "AR"
+keep.these[ is.na(keep.these) ] <- FALSE
+arts <- V(net)[ keep.these ]
+V(net)[ keep.these ]$color <- "orange"
+V(net)[ keep.these ]$frame.color <- "orange"
+g.ar <- induced_subgraph( graph=net, vids=arts )
+
+keep.these <- V(net)$NTMAJ5 == "HU"
+keep.these[ is.na(keep.these) ] <- FALSE
+V(net)[ keep.these ]$color <- "steelblue"
+V(net)[ keep.these ]$frame.color <- "steelblue"
+human.services <- V(net)[ keep.these ]
+g.hs <- induced_subgraph( graph=net, vids=human.services )
+
+keep.these <- V(net)$NTMAJ5 == "ED"
+keep.these[ is.na(keep.these) ] <- FALSE
+V(net)[ keep.these ]$color <- "gray20"
+V(net)[ keep.these ]$frame.color <- "gray20"
+education <- V(net)[ keep.these ]
+g.ed <- induced_subgraph( graph=net, vids=education )
+
+keep.these <- V(net)$NTMAJ5 == "HE"
+keep.these[ is.na(keep.these) ] <- FALSE
+V(net)[ keep.these ]$color <- "darkred"
+V(net)[ keep.these ]$frame.color <- "darkred"
+health <- V(net)[ keep.these ]
+g.he <- induced_subgraph( graph=net, vids=health )
+
+keep.these <- V(net)$NTMAJ5 == "OT"
+keep.these[ is.na(keep.these) ] <- FALSE
+other <- V(net)[ keep.these ]
+V(net)[ keep.these ]$color <- "gray80"
+V(net)[ keep.these ]$frame.color <- "gray80"
+g.ot <- induced_subgraph( graph=net, vids=other )
+
+
+
+par( mar=c(0,0,0,0) )
+plot( net, layout=layout_nicely(net) )
+
+```
+
+
+
+## Plot Subsectors Separately
+
+
+```{r, fig.height=10}
+
+
+par( mar=c(0,0,2,0), mfrow=c(2,2) )
+
+plot( g.hs, 
+      layout=layout_with_kk(g.hs), 
+      edge.color="gray50", 
+      vertex.label=NA )
+title( main="Human Services", line=0 )
+
+plot( g.ar, 
+      layout=layout_with_kk(g.ar), 
+      edge.color="gray50", 
+      vertex.label=NA )
+title( main="Arts", line=0 )
+
+plot( g.ed, 
+      layout=layout_with_kk(g.ed), 
+      edge.color="gray50", 
+      vertex.label=NA )
+title( main="Education", line=0 )
+
+plot( g.he, 
+      layout=layout_with_kk(g.he), 
+      edge.color="gray50", 
+      vertex.label=NA )
+title( main="Health", line=0 )
+
+
+```
+
+
+### Preserve Layout from Full Graph
+
+```{r, fig.height=10}
+
+net$layout <- layout_nicely(net)
+
+
+keep.these <- V(net)$NTMAJ5 == "AR"
+keep.these[ is.na(keep.these) ] <- FALSE
+arts <- V(net)[ keep.these ]
+V(net)[ keep.these ]$color <- "orange"
+V(net)[ keep.these ]$frame.color <- "orange"
+g.ar <- induced_subgraph( graph=net, vids=arts )
+g.ar$layout <- g.ar$layout[ keep.these, ]
+
+
+keep.these <- V(net)$NTMAJ5 == "HU"
+keep.these[ is.na(keep.these) ] <- FALSE
+V(net)[ keep.these ]$color <- "steelblue"
+V(net)[ keep.these ]$frame.color <- "steelblue"
+human.services <- V(net)[ keep.these ]
+g.hs <- induced_subgraph( graph=net, vids=human.services )
+g.hs$layout <- g.hs$layout[ keep.these, ]
+
+keep.these <- V(net)$NTMAJ5 == "ED"
+keep.these[ is.na(keep.these) ] <- FALSE
+V(net)[ keep.these ]$color <- "gray20"
+V(net)[ keep.these ]$frame.color <- "gray20"
+education <- V(net)[ keep.these ]
+g.ed <- induced_subgraph( graph=net, vids=education )
+g.ed$layout <- g.ed$layout[ keep.these, ]
+
+keep.these <- V(net)$NTMAJ5 == "HE"
+keep.these[ is.na(keep.these) ] <- FALSE
+V(net)[ keep.these ]$color <- "darkred"
+V(net)[ keep.these ]$frame.color <- "darkred"
+health <- V(net)[ keep.these ]
+g.he <- induced_subgraph( graph=net, vids=health )
+g.he$layout <- g.he$layout[ keep.these, ]
+
+keep.these <- V(net)$NTMAJ5 == "OT"
+keep.these[ is.na(keep.these) ] <- FALSE
+other <- V(net)[ keep.these ]
+V(net)[ keep.these ]$color <- "gray80"
+V(net)[ keep.these ]$frame.color <- "gray80"
+g.ot <- induced_subgraph( graph=net, vids=other )
+g.ot$layout <- g.ot$layout[ keep.these, ]
+
+
+
+par( mar=c(0,0,2,0), mfrow=c(2,2) )
+
+plot( g.hs, 
+      edge.color="gray50", 
+      vertex.label=NA )
+title( main="Human Services", line=0 )
+
+plot( g.ar, 
+      edge.color="gray50", 
+      vertex.label=NA )
+title( main="Arts", line=0 )
+
+plot( g.ed, 
+      edge.color="gray50", 
+      vertex.label=NA )
+title( main="Education", line=0 )
+
+plot( g.he, 
+      edge.color="gray50", 
+      vertex.label=NA )
+title( main="Health", line=0 )
+
+```
+
+
+
+## Plot Separately
+
+```{r, fig.height=10}
+
+
+
+plot( g.hs, 
+      layout=layout_with_kk(g.hs), 
+      edge.color="gray50", 
+      vertex.label=NA )
+title( main="Human Services", line=0 )
+
+
+
+plot( g.ar, 
+      layout=layout_with_kk(g.ar), 
+      edge.color="gray50", 
+      vertex.label=NA )
+title( main="Arts", line=0 )
+
+
+
+plot( g.ed, 
+      layout=layout_with_kk(g.ed), 
+      edge.color="gray50", 
+      vertex.label=NA )
+title( main="Education", line=0 )
+
+
+
+plot( g.he, 
+      layout=layout_with_kk(g.he), 
+      edge.color="gray50", 
+      vertex.label=NA )
+title( main="Health", line=0 )
+
+
+
+```
+
+
+# Size by Attribute (AGE)
+
+```{r}
+
+
+V(net)$AGE[ is.na( V(net)$AGE ) ] <- median( V(net)$AGE, na.rm=T )
+
+summary( V(net)$AGE )
+
+V(net)$size <- 1 + 10*( V(net)$AGE / max( V(net)$AGE ) )
+
+
+par( mar=c(0,0,0,0) )
+plot( net, layout=layout_nicely(net) )
+
+
+
+
+```
+
+
+
