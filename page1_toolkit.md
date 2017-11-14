@@ -88,6 +88,8 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 
 [ <a href="/workshop/urban_markdown_example.html">LINK</a> ]
 
+
+
 </p></div>
 <div class="col l1 s12"></div>
 </div>
