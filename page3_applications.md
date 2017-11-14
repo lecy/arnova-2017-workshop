@@ -76,13 +76,15 @@ permalink: /applications/
 
 <div class="icon-block">
   <div class="col s12 m4">
-   <a href="https://lecy.github.io/arnova-2017-workshop/Toolkit/">
+   <a href="http://kateto.net/networks-r-igraph">
    <h1 class="center orange-text"><i class="large material-icons">people</i></h1></a>
    <h3 class="center">Interlocking Board Networks</h3>
 
    <p class="center light">An introduction to some of useful tools in the data science ecosystem that will greatly enhance and accelerate the research process. This section covers data-driven documents, APIs, geo-spatial tools, and R packages.</p>
 </div>
 </div>
+
+
 
 <br>
 
@@ -97,7 +99,7 @@ permalink: /applications/
 
 <div class="icon-block">
   <div class="col s12 m4">
-   <a href="https://lecy.github.io/arnova-2017-workshop/Toolkit/">
+   <a href="">
    <h1 class="center orange-text"><i class="large material-icons">pie_chart</i></h1></a>
    <h3 class="center">Census Data</h3>
 
