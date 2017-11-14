@@ -1,7 +1,9 @@
 ---
-title: "igraph Examples"
 output: html_document
 ---
+
+# Building a Board Interlock Network
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, message=F, warning=F, fig.width=10, fig.height=10 )
