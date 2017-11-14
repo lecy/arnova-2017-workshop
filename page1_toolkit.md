@@ -16,7 +16,7 @@ permalink: /Toolkit/
 <div class="col l1 s12"></div>
 <div class="col l10 s12"><p class="light">
   
-Data science is an emerging field that combines data analysis with computer programming to provide practical insights for organizations and social problems. See a nice overview [ <a href="http://datasmart.ash.harvard.edu/news/article/the-rise-of-the-data-scientists-611">HERE</a> ].
+Data science is an emerging field that combines data analysis with computer programming to provide practical insights for organizations and social problems. See a nice overview [ <a href="http://datasmart.ash.harvard.edu/news/article/the-rise-of-the-data-scientists-611" target="_blank">HERE</a> ].
 <br><br>
 
 </p></div>
