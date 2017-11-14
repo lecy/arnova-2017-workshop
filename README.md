@@ -1,19 +1,4 @@
-# Notes
 
-Material icons for landing page are here:
-
-http://materializecss.com/icons.html
-
-
-
-
-# Jekyll Materialize Starter Template v0.1
-
-*A Site Starter Materialize Templates.
-
-The theme is a fork of the [minima][1]
-
-![minima theme preview](/screenshot.png)
 
 
 # License
