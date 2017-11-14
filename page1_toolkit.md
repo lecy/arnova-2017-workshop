@@ -19,7 +19,7 @@ permalink: /Toolkit/
 Data science is an emerging field that combines data analysis with computer programming to provide practical insights for organizations and social problems. 
 <br><br>
 In order to accelerate and improve the analytical process, Pete Warden created a website called <a href="http://www.datasciencetoolkit.org/" target="_blank">The Data Science Toolkit</a> which consisted of useful APIs and tools for with data. We have borrowed the idea to provide some tools for using data for nonprofit scholarship.
-br><br>
+<br><br>
 If you wish to embrace the <a href="http://openscience.org/what-exactly-is-open-science/" target="_blank">open science movement</a>, which values transparent and reproducible research, and if you wish to leverage new and interesting data sources for nonprofit scholarship, then you will need to start building your own data science toolkit. 
 
 </p></div>
