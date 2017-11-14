@@ -51,7 +51,11 @@ If you wish to embrace the <a href="http://openscience.org/what-exactly-is-open-
 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 
 <br><br>
-<a href="https://player.vimeo.com/video/180644880" target="_blank">R in 60 Seconds</a>
+Check out <a href="https://player.vimeo.com/video/180644880" target="_blank">R in 60 Seconds</a>.
+<br><br>
+These are useful <a href="https://www.statmethods.net/r-tutorial/index.html" target="_blank">cheat sheets</a>.
+<br><br>
+Try this <a href="https://www.statmethods.net/r-tutorial/index.html" target="_blank">tutorial</a> or this <a href="https://www.datacamp.com/courses/free-introduction-to-r" target="_blank">free course</a>. 
 
 </p></div>
 <div class="col l1 s12"></div>
@@ -72,7 +76,7 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 
 
 <div class="icon-block">
-   <a href="https://player.vimeo.com/video/180644880">
+   <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">
    <h1 class="center  orange-text"><i class="medium material-icons">motorcycle</i></h1></a>
    <h3 class="center">Data-Driven Documents</h3>
 </div>
@@ -103,7 +107,7 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 <br> 
 
 <div class="icon-block">
-   <a href="https://player.vimeo.com/video/180644880">
+   <a href="">
    <h1 class="center  orange-text"><i class="medium material-icons">compare_arrows</i></h1></a>
    <h3 class="center">Data API's</h3>
 </div>
@@ -113,7 +117,9 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 <div class="col l1 s12"></div>
 <div class="col l10 s12"><p class="light">
   
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+An Application Program Interface (API) is a standard that allows two program to speak to each other. There are many data publishers that have developed APIs that allow you send a request for data through R, and receive the data directly in R, without having to go to a website and download files, then import them into R.
+<br><br>
+Follow the link above for an example of how the Census API can simplify your life by allowing you to query Census datasets and return you desired set of variables aggregated by your desired geographic unit. 
 
 </p></div>
 <div class="col l1 s12"></div>
@@ -135,7 +141,7 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 <br> 
 
 <div class="icon-block">
-   <a href="https://player.vimeo.com/video/180644880">
+   <a href="">
    <h1 class="center  orange-text"><i class="medium material-icons">visibility</i></h1></a>
    <h3 class="center">Visualization</h3>
 </div>
@@ -166,7 +172,7 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 <br> 
 
 <div class="icon-block">
-   <a href="https://player.vimeo.com/video/180644880">
+   <a href="https://shiny.rstudio.com/gallery/">
    <h1 class="center  orange-text"><i class="medium material-icons">desktop_windows</i></h1></a>
    <h3 class="center">Web Applications</h3>
 </div>
@@ -176,7 +182,9 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 <div class="col l1 s12"></div>
 <div class="col l10 s12"><p class="light">
   
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+R has developed a package called Shiny which allows you to write code in R, and translate the code automatically to HTML and javascript, the foundational languages of web pages. This allows you to create dynamic web applications which allow the user to interact with data in interesting ways. For example, if you are working with a local school district, you can create a simple application that allows them to generate reports on behavioral problems or absenteeism, where they can select the specific grades, neighborhoods, and racial groups of interest. This means they can now drill down into the data to gain insight into trends. 
+<br><br>
+Follow the link above to see examples of R Shiny web apps.
 
 </p></div>
 <div class="col l1 s12"></div>
