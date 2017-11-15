@@ -103,18 +103,14 @@ dat.revoked$Year <- substr( dat.revoked$Revocation.Date, 8, 11 )
 
 The federal government mandates that all allocations made through federal agencies are reported back to the US Treasury in a consistent and timely manner. This data is then packaged in the Federal Assistance Awards Data System (FAADS) and the Federal Procurement Data System (FPDS). These databases are available for download on the [USA-Spending.gov](https://www.usaspending.gov/Pages/Default.aspx) website.  
 
-A sizable amount of allocations flow to nonprofits within these datasets, so they have the potential to augment traditional sources data on government funding:
-
-![](./assets/Figure1.png)
-
-
-It can, however, be challenging to use the data to study nonprofits because (1) the nonprofit codes are not always reliable, and (2) the database does not contain EINs, making it hard to link nonprofit data to their subsector codes and financial information.
+A sizable amount of allocations flow to nonprofits within these datasets, so they have the potential to augment traditional sources data on government funding. It can, however, be challenging to use the data to study nonprofits because (1) the nonprofit codes are not always reliable, and (2) the database does not contain EINs, making it hard to link nonprofit data to their subsector codes and financial information.
 
 The following paper outlines some methods for linking FAADS data to NCCS 990 datasets, and example code is provided:
 
 Lecy, J. & Thornton, J. (2016). “What Big Data Can Tell Us about Government Awards to the Nonprofit Sector: Using the FAADS Dataset.” Nonprofit and Voluntary Sector Quarterly, forthcoming. [ [download](
 http://www.lecy.info/s/FAADS-2015-Lecy-Thornton.pdf) ] [ [FAADS to NCCS crosswalk script](https://github.com/lecy/FAADS-NCCS-Crosswalk/blob/master/README.md) ]
 
+<br>
 
 <img src="https://github.com/lecy/arnova-2017-workshop/blob/master/assets/Figure1.png?raw=true" style="width:128px;height:128px;">
 
