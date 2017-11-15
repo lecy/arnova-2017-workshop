@@ -2,6 +2,122 @@
 
 This folder contains the markdown and data files from the 2017 ARNOVA pre-conference workshop on Open Data / Open Science for nonprofit research.
 
-This folder contains the R Markdown documents used to generate examples on the Research Vignettes page. 
-
 The **data** folder contains data used for the examples.
+
+
+## Necessary R Packages
+
+If you would like to follow along with examples during the workshop, please open an R terminal and install the following packages:
+
+```{r}
+
+workshop.packages <- c( "dplyr","geojsonio","ggmap","maps",
+                        "maptools","raster","rgdal","rgeos",
+                        "sp","gender","igraph","httr","tidyverse",
+                        "stringr","RCurl","reshape2","RColorBrewer",
+                        "extrafont","knitr" )
+
+install.packages( workshop.packages )
+
+# to install one at a time:
+# install.packages( "package.name" )
+
+
+```
+
+
+
+## Workshop Content
+
+
+### The Data Science Ecosystem
+
+You do not need a degree in computer science or statistics to master some basic data science skills. You do, however, need to learn a few tools.
+
+Although these tools are not trivial (R has a bit of a learning curve), they are accessible and powerful. In general, I have found that it requires only one course for students to become conversant in R. After about 3 semesters they are proficient. *Fluency requires dating a computer.*
+
+
+#### Data Programming Languages
+
+* Why learn R? 
+
+
+#### Data-Driven Documents: Markdown Basics 
+
+* Explains the basics of markdown documents
+
+
+
+#### Importing Data Through APIs
+
+* How does an API work? 
+* Examples of useful R packages that leverage APIs
+
+
+
+
+### Open Nonprofit Datasets
+
+
+#### NCCS Data
+
+
+#### IRS E-Filer Database
+
+
+#### Misc. IRS Files
+
+
+
+#### Federal Grants and Contracts
+
+
+
+#### 
+
+
+
+
+
+
+
+## Research Vignettes
+
+<br>
+
+#### Female Pay Disparity Example
+
+* Uses the **gender** package in R
+* Uses compensation and board data from the IRS e-filer database
+
+
+#### Spatial Analysis Example
+
+* Uses nonprofits in Grand Rapids from the IRS Master File
+* Geocodes addresses using the **ggmap** package and Google Maps API
+* Visualizes spatial proximity using GIS tools in R
+
+
+#### Board Network Example
+
+* Uses board data from the IRS e-filer database
+* Uses an approximate or fuzzy matching technique to reconcile names
+* Uses the **igraph** package for network visualization
+
+
+#### Census Data Made Easy
+
+* Uses the **censusapi** package and the US Census API
+* Demonstrates how to specify unique geographic units through the API
+* Demonstrates how to easily import the most commmon and useful demographic and economic variables
+
+
+
+
+
+
+
+
+
+
+
