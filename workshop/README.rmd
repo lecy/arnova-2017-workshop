@@ -69,14 +69,14 @@ Although these tools are not trivial (R has a bit of a learning curve), they are
 * Uses compensation and board data from the IRS e-filer database
 
 
-#### Spatial Analysis Example
+#### [Spatial Analysis Example](https://lecy.github.io/arnova-2017-workshop/workshop/spatial_example.html)
 
 * Uses nonprofits in Grand Rapids from the IRS Master File
 * Geocodes addresses using the **ggmap** package and Google Maps API
 * Visualizes spatial proximity using GIS tools in R
 
 
-#### Board Network Example
+#### [Board Network Example](https://lecy.github.io/arnova-2017-workshop/workshop/board_networks.html)
 
 * Uses board data from the IRS e-filer database
 * Uses an approximate or fuzzy matching technique to reconcile names
@@ -94,7 +94,7 @@ Although these tools are not trivial (R has a bit of a learning curve), they are
 
 ------------------
 
-### OPEN NONPROFIT DATASETS
+### [OPEN NONPROFIT DATASETS](https://lecy.github.io/arnova-2017-workshop/OpenData/)
 
 
 #### NCCS Data
