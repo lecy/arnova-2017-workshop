@@ -1,11 +1,90 @@
 ---
-title: "igraph Examples"
 output: html_document
 ---
+
+
+# Identifying Board Interlock
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, message=F, warning=F, fig.width=10, fig.height=10 )
 ```
+
+
+Board interlock networks 
+
+
+
+
+![]()  
+
+
+
+
+
+
+
+### Exact Matching
+
+
+
+```{r}
+
+"CHARLES F COLE"  ==  "CHARLES F COLE"
+
+"CHARLES F COLE"  ==  "CHARLES COLE"
+
+"CHARLIE F COLE"  ==  "CHARLES F COLE"
+
+"CHUCK F COLE"  ==  "CHARLES F COLE"
+
+
+```
+
+
+
+## Fuzzy Matching
+
+
+
+```{r}
+
+
+agrepl( "CHARLES F COLE", "CHARLES F COLE" )
+
+
+agrepl( "CHARLES F COLE", "CHARLES COLE" )
+
+agrepl( "CHARLIE F COLE", "CHARLES F COLE" )
+
+agrepl( "CHUCK F COLE",  "CHARLES F COLE" )
+
+agrepl( "CHUCK F BORROWITZSKY",  "CHARLES F BORROWITZSKY" )
+
+
+```
+
+
+
+
+```{r}
+
+matches <-
+structure(list(BOARD.MEMBER.V1 = c("EILEEN HALL", "EILEEN HALL", 
+"GEORGE HEARST", "PAUL F COLE", "J THALIA CUNNINGHAM", "MARY JANE PAULING", 
+"BERT SCHOU", "AL OCONNOR", "TOM COX"), BOARD.MEMBER.V2 = c("EILEEN HALL", 
+"EILEEN HANLEY", "GEORGE R HEARST", "PAUL COLE", "JOSIE THALIA CUNNINGHAM", 
+"MARY J PAULING", "ROBERT SCHOFIELD", "E MICHAEL OCONNOR", "TOM CONWAY"
+), EXACT.MATCH = c(TRUE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, 
+FALSE, FALSE), FUZZY.MATCH = c(TRUE, TRUE, TRUE, TRUE, TRUE, 
+FALSE, TRUE, TRUE, TRUE)), .Names = c("BOARD.MEMBER.V1", "BOARD.MEMBER.V2", 
+"EXACT.MATCH", "FUZZY.MATCH"), row.names = c(1L, 2L, 25L, 49L, 
+38L, 5L, 11L, 7L, 35L), class = "data.frame")
+
+```
+
+
+
 
 
 ```{r}
@@ -21,18 +100,82 @@ library( igraph )
 ```{r, echo=F}
 
 setwd( "C:/Users/jdlecy/Dropbox/00 - Nonprofit Open Data/08 - ARNOVA Website/arnova-2017-workshop/workshop/data" )
+
 source( "net_data_2000.R" )
 source( "attribute_data.R" )
+
+fuzzy.matches <- head( net.2000[ c("board.member.v1","board.member.v2") ], 50)
+
+dput( fuzzy.matches )
 
 ```
 
 
-```{r}
+```{r, eval=F}
+
 
 source( "https://raw.githubusercontent.com/lecy/arnova-2017-workshop/master/workshop/data/net_data_2000.R" )
 source( "https://raw.githubusercontent.com/lecy/arnova-2017-workshop/master/workshop/data/attribute_data.R" )
 
 ```
+
+
+
+
+# Network from Edgelist
+
+```{r}
+
+
+# read in network ties plus attributes
+
+df <- net.2000[ c("org1","ein") ]
+
+net <- graph_from_data_frame( d=df, vertices=att, directed=F ) 
+
+
+par( mar=c(0,0,0,0) )
+plot( net, edge.arrow.size=.5, vertex.size=4, vertex.label=NA )
+
+
+V(net)$size <- 4
+V(net)$frame.color <- "white"
+V(net)$color <- "orange"
+V(net)$label <- "" 
+E(net)$arrow.mode <- 0
+
+par( mar=c(0,0,0,0) )
+plot( net, layout=layout_nicely(net) )
+
+
+
+```
+
+
+
+# Plotting Graphs
+
+```{r}
+
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ```{r}
@@ -92,44 +235,6 @@ att$AGE[ att$AGE > 100 ] <- median( att$AGE, na.rm=T )
 ```
 
 
-
-# Network from Edgelist
-
-```{r}
-
-
-# read in network ties plus attributes
-
-df <- dat[ dat$year == 2000 , c("org1","ein") ]
-
-net <- graph_from_data_frame( d=df, vertices=att, directed=F ) 
-
-
-par( mar=c(0,0,0,0) )
-plot( net, edge.arrow.size=.5, vertex.size=4, vertex.label=NA )
-
-
-
-
-```
-
-
-
-# Plotting Graphs
-
-```{r}
-
-V(net)$size <- 4
-V(net)$frame.color <- "white"
-V(net)$color <- "orange"
-V(net)$label <- "" 
-E(net)$arrow.mode <- 0
-
-par( mar=c(0,0,0,0) )
-plot( net, layout=layout_nicely(net) )
-
-
-```
 
 
 
