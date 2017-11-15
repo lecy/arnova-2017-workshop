@@ -115,7 +115,7 @@ The following paper outlines some methods for linking FAADS data to NCCS 990 dat
 Lecy, J. & Thornton, J. (2016). “What Big Data Can Tell Us about Government Awards to the Nonprofit Sector: Using the FAADS Dataset.” Nonprofit and Voluntary Sector Quarterly, forthcoming. [ [download](
 http://www.lecy.info/s/FAADS-2015-Lecy-Thornton.pdf) ] [ [FAADS to NCCS crosswalk script](https://github.com/lecy/FAADS-NCCS-Crosswalk/blob/master/README.md) ]
 
-<img src="assets/Figure1.png" alt="FAADS">
+<img src="/assets/Figure1.png" alt="FAADS">
 
 
 <br>
