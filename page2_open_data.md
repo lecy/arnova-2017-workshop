@@ -105,7 +105,7 @@ The federal government mandates that all allocations made through federal agenci
 
 A sizable amount of allocations flow to nonprofits within these datasets, so they have the potential to augment traditional sources data on government funding:
 
-![](assets/Figure 1.png)
+![](assets/Figure1.png)
 
 It can, however, be challenging to use the data to study nonprofits because (1) the nonprofit codes are not always reliable, and (2) the database does not contain EINs, making it hard to link nonprofit data to their subsector codes and financial information.
 
