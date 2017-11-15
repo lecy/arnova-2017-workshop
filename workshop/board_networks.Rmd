@@ -2,7 +2,7 @@
 output:
   html_document:
     df_print: paged
-    theme: cerulean
+    theme: paper
     highlight: haddock
     toc: yes
     toc_float: yes
