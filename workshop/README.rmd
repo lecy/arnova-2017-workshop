@@ -38,18 +38,19 @@ You do not need a degree in computer science or statistics to master some basic 
 Although these tools are not trivial (R has a bit of a learning curve), they are accessible and powerful. In general, I have found that it requires only one course for students to become conversant in R. After about 3 semesters they are proficient. *Fluency requires dating a computer.*
 
 
-#### Data Programming Languages
+#### [Data Programming Languages](https://lecy.github.io/arnova-2017-workshop/workshop/r_overview.html)
 
 * Why learn R? 
 
 
-#### Data-Driven Documents: Markdown Basics 
+#### [Data-Driven Documents: Markdown Basics](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 
 * Explains the basics of markdown documents
+* See some of the [interesting document formats](http://rmarkdown.rstudio.com/formats.html) that you can produce!
 
 
 
-#### Importing Data Through APIs
+#### [Importing Data Through APIs](https://lecy.github.io/arnova-2017-workshop/workshop/census_api_example.html)
 
 * How does an API work? 
 * Examples of useful R packages that leverage APIs
