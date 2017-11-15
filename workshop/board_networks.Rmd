@@ -2,8 +2,12 @@
 output: html_document
 ---
 
+<<<<<<< HEAD
 
 # Identifying Board Interlock
+=======
+# Building a Board Interlock Network
+>>>>>>> 2418982dec0123d93b4d01e07fbc0d3584e3a5bc
 
 
 ```{r setup, include=FALSE}
