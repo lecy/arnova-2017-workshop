@@ -115,7 +115,8 @@ The following paper outlines some methods for linking FAADS data to NCCS 990 dat
 Lecy, J. & Thornton, J. (2016). “What Big Data Can Tell Us about Government Awards to the Nonprofit Sector: Using the FAADS Dataset.” Nonprofit and Voluntary Sector Quarterly, forthcoming. [ [download](
 http://www.lecy.info/s/FAADS-2015-Lecy-Thornton.pdf) ] [ [FAADS to NCCS crosswalk script](https://github.com/lecy/FAADS-NCCS-Crosswalk/blob/master/README.md) ]
 
-<img src="https://github.com/lecy/arnova-2017-workshop/blob/master/assets/Figure1.png" alt="FAADS">
+
+<img src="https://github.com/lecy/arnova-2017-workshop/blob/master/assets/Figure1.png" style="width:128px;height:128px;">
 
 
 <br>
@@ -125,6 +126,9 @@ http://www.lecy.info/s/FAADS-2015-Lecy-Thornton.pdf) ] [ [FAADS to NCCS crosswal
 
 ### Federal Audit Clearinghouse
 
+Thousands of nonprofits are required to submit a federal audit each year, which are filed in the [Federal Audit Clearinghouse](https://harvester.census.gov/facdissem/SearchA133.aspx). These files are interesting because audits contain financial data that reports operational categories of revenues and expenses in ways that are different from what appears on 990 forms. They can thus provide more detail about financial health than what is currently available.
+
+Marc Joffe has begum collecting all of the nonprofit audits in a [central repository](http://www.govwiki.info/pdfs/Non-Profit/). These will hopefully be discovered by researchers that are looking for alternative types of nonprofit financial data. 
 
 
 
@@ -134,11 +138,14 @@ http://www.lecy.info/s/FAADS-2015-Lecy-Thornton.pdf) ] [ [FAADS to NCCS crosswal
 
 ------------------------------------------  
 
-<br>
-<br>
+### Additional Sources
 
-* New York Times API / Lexus Nexus
-* Twitter API / Twitter statistical sample
+* New York Times API / Lexus Nexus for longitudinal text studies
+* Twitter API / Twitter statistical sample (contact Urban Institute)
+* Website text
+* Google Trends
+* Canadian tax data
 
 <br>
 <br> 
+<br>
