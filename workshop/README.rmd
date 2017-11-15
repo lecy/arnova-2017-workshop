@@ -26,6 +26,7 @@ install.packages( workshop.packages )
 ```
 
 
+------------------
 
 ## Workshop Content
 
@@ -56,36 +57,13 @@ Although these tools are not trivial (R has a bit of a learning curve), they are
 
 
 
-### Open Nonprofit Datasets
+-------------------------
 
-
-#### NCCS Data
-
-
-#### IRS E-Filer Database
-
-
-#### Misc. IRS Files
-
-
-
-#### Federal Grants and Contracts
-
-
-
-#### 
-
-
-
-
-
-
-
-## Research Vignettes
+## RESEARCH VIGNETTES
 
 <br>
 
-#### Female Pay Disparity Example
+#### [Female Pay Disparity Example](https://lecy.github.io/arnova-2017-workshop/workshop/coding_gender.html)
 
 * Uses the **gender** package in R
 * Uses compensation and board data from the IRS e-filer database
@@ -110,6 +88,37 @@ Although these tools are not trivial (R has a bit of a learning curve), they are
 * Uses the **censusapi** package and the US Census API
 * Demonstrates how to specify unique geographic units through the API
 * Demonstrates how to easily import the most commmon and useful demographic and economic variables
+
+
+
+
+------------------
+
+### OPEN NONPROFIT DATASETS
+
+
+#### NCCS Data
+
+
+#### IRS E-Filer Database
+
+
+
+#### Misc. IRS Files
+
+
+
+#### Federal Grants and Contracts
+
+
+
+
+
+
+
+
+
+
 
 
 
