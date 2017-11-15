@@ -271,6 +271,7 @@ head( no.gender, 10 )
 
 ```{r}
 
+dat$gender[ dat$gender == "either" ] <- NA
 
 ggplot( dat[!is.na(dat$gender),], aes( x=log(RptCmpOrg), fill=gender )) + 
         geom_density(alpha = 0.5) + xlim(10,15) +

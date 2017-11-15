@@ -16,7 +16,8 @@ output:
 # Spatial Analysis of Nonprofits in Grand Rapids
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set( echo = TRUE ,  warning = F , message = F, fig.width=10 )
+knitr::opts_chunk$set( echo = TRUE ,  warning = F , message = F, 
+                       fig.width=10, fig.height=10 )
 ```
 
 
