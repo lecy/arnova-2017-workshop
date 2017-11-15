@@ -47,7 +47,10 @@ Although these tools are not trivial (R has a bit of a learning curve), they are
 
 * Explains the basics of markdown documents
 * See some of the [interesting document formats](http://rmarkdown.rstudio.com/formats.html) that you can produce!
-
+   * [storyboard](https://beta.rstudioconnect.com/jjallaire/htmlwidgets-showcase-storyboard/htmlwidgets-showcase-storyboard.html) 
+   * [reveal.js presentations](http://rollingstones.vizzuality.com)  
+   * [shower presentations](http://mangothecat.github.io/rmdshower/skeleton.html)
+   * [This workshop website](https://lecy.github.io/arnova-2017-workshop/)
 
 
 #### [Importing Data Through APIs](https://lecy.github.io/arnova-2017-workshop/workshop/census_api_example.html)
