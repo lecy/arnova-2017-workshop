@@ -122,7 +122,7 @@ See how the Urban Institute is using markdown files to automate report-generatio
   
 An Application Program Interface (API) is a standard that allows two program to speak to each other. There are many data publishers that have developed APIs that allow you send a request for data through R, and receive the data directly in R, without having to go to a website and download files, then import them into R.
 <br><br>
-Check out <a href="https://hrecht.github.io/censusapi/articles/getting-started.html"></a> this tutorial for an example of how the Census API can simplify your life by allowing you to query Census datasets and return you desired set of variables aggregated by your desired geographic unit. 
+Check out <a href="https://hrecht.github.io/censusapi/articles/getting-started.html"> this tutorial</a> for an example of how the Census API can simplify your life by allowing you to query Census datasets and return you desired set of variables aggregated by your desired geographic unit. 
 
 
 </p></div>
