@@ -116,7 +116,7 @@ Lecy, J. & Thornton, J. (2016). “What Big Data Can Tell Us about Government Aw
 http://www.lecy.info/s/FAADS-2015-Lecy-Thornton.pdf) ] [ [FAADS to NCCS crosswalk script](https://github.com/lecy/FAADS-NCCS-Crosswalk/blob/master/README.md) ]
 
 
-<img src="https://github.com/lecy/arnova-2017-workshop/blob/master/assets/Figure1.png" style="width:128px;height:128px;">
+<img src="https://github.com/lecy/arnova-2017-workshop/blob/master/assets/Figure1.png?raw=true" style="width:128px;height:128px;">
 
 
 <br>
