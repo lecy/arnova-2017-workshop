@@ -26,6 +26,7 @@ install.packages( workshop.packages )
 ```
 
 
+------------------
 
 ## Workshop Content
 
@@ -56,9 +57,9 @@ Although these tools are not trivial (R has a bit of a learning curve), they are
 
 
 
+-------------------------
 
-
-## Research Vignettes
+## RESEARCH VIGNETTES
 
 <br>
 
@@ -91,7 +92,7 @@ Although these tools are not trivial (R has a bit of a learning curve), they are
 
 
 
-
+------------------
 
 ### OPEN NONPROFIT DATASETS
 
