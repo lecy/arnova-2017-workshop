@@ -1,6 +1,5 @@
 ---
 author: "Francisco Santamarina"
-date: "November 8, 2017"
 output:
   html_document:
     df_print: paged
@@ -17,7 +16,7 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set( echo = TRUE ,  warning = F , message = F, 
-                       fig.width=10, fig.height=10 )
+                       fig.width=10, fig.height=8 )
 ```
 
 

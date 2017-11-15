@@ -308,7 +308,7 @@ title <- gsub( "\\/", " ", title )
 title <- gsub( "\\.", "", title )
 
 
-sort( table( title ) , T )[ 1:50 ] %>% names
+sort( table( title ) , T )[ 1:50 ] %>% names 
 
 
 
