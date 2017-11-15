@@ -112,7 +112,7 @@ http://www.lecy.info/s/FAADS-2015-Lecy-Thornton.pdf) ] [ [FAADS to NCCS crosswal
 
 <br>
 
-<img src="https://github.com/lecy/arnova-2017-workshop/blob/master/assets/Figure1.png?raw=true">
+<img src="https://github.com/lecy/arnova-2017-workshop/blob/master/assets/Figure1.png?raw=true" style="width:600px;">
 
 
 <br>
