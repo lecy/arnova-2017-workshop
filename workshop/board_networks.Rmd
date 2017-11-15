@@ -1,36 +1,58 @@
 ---
-output: html_document
+output:
+  html_document:
+    df_print: paged
+    theme: cerulean
+    highlight: haddock
+    toc: yes
+    toc_float: yes
+    code_fold: hide
+    css: vignettes.css
 ---
 
-<<<<<<< HEAD
 
-# Identifying Board Interlock
-=======
-# Building a Board Interlock Network
->>>>>>> 2418982dec0123d93b4d01e07fbc0d3584e3a5bc
+
+
 
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, message=F, warning=F, fig.width=10, fig.height=10 )
 ```
 
-
-Board interlock networks 
-
-
-
-
-![]()  
+```{r}
+library( igraph )
+library( pander )
+```
 
 
 
 
+# Building a Board Interlock Network
 
+
+
+Board interlock is a phenomenon that occurs when multiple organizations share the sample board members. These individuals occupy an important space on the organizational landscape because they mediate information and resources in many cases.
+
+
+
+
+![](board_interlock.png)  
+
+
+
+
+This research vignette presents a method for generating network files from lists of board members using an approximate matching technique.
 
 
 ### Exact Matching
 
+If we are working with real data that has not been generated through a very structured process, the data is going to be messy and imprecise. 
 
+A primary source of data for nonprofit scholarship, the 990 tax forms, is fully of messy and imprecise data. 
+
+For example, if we want to determine whether one individual serves on multiple nonprofit boards, we can do this by matching board member names across organizations. 
+
+The problem we will run into is that any small difference in how the name is spelled will result in an false negative match. Take these cases below:
 
 ```{r}
 
@@ -42,20 +64,33 @@ Board interlock networks
 
 "CHUCK F COLE"  ==  "CHARLES F COLE"
 
+"CHARLES F COLE"  ==  "COLE, CHARLES F"
 
 ```
+
+A human would look at these cases and decide that they are all matches. A computer will look at these cases and decide that only the first one is a match.
 
 
 
 ## Fuzzy Matching
 
+We can overcome this problem using approximate matching, or "fuzzy" matching techniques.
+
+There are a large variety of methods available for this, but the base R package contains a version that uses an edit distance calculation to determine if two words are close.
+
+```{r}
+
+agrep( "lazy", c("daisy", "lasy", "larry" ), max.distance = 0.1, value = TRUE )
+
+```
+
+We can see that this method would give us reasonable matches in most of these cases now. A human would probably recognize that the last case is a match, where the computer would need to know the rule that a comma signifies that name order has been reversed.
 
 
 ```{r}
 
 
 agrepl( "CHARLES F COLE", "CHARLES F COLE" )
-
 
 agrepl( "CHARLES F COLE", "CHARLES COLE" )
 
@@ -68,10 +103,23 @@ agrepl( "CHUCK F BORROWITZSKY",  "CHARLES F BORROWITZSKY" )
 
 ```
 
-
+The second to last case is a little trickier because one nonprofit is using the full name "Charles" while the other nonprofit is using the nickname "Chuck". We can deal with this by relaxing the edit distance threshold or changing the cost of specific edits, but any of these changes will need to balance sensitivity and specificity of the matches. 
 
 
 ```{r}
+
+
+agrepl( "CHUCK F COLE",  "CHARLES F COLE", max.distance = 0.4 )
+
+
+```
+
+
+Consider some of these cases:
+
+
+
+```{r, echo=F}
 
 matches <-
 structure(list(BOARD.MEMBER.V1 = c("EILEEN HALL", "EILEEN HALL", 
@@ -82,24 +130,24 @@ structure(list(BOARD.MEMBER.V1 = c("EILEEN HALL", "EILEEN HALL",
 ), EXACT.MATCH = c(TRUE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, 
 FALSE, FALSE), FUZZY.MATCH = c(TRUE, TRUE, TRUE, TRUE, TRUE, 
 FALSE, TRUE, TRUE, TRUE)), .Names = c("BOARD.MEMBER.V1", "BOARD.MEMBER.V2", 
-"EXACT.MATCH", "FUZZY.MATCH"), row.names = c(1L, 2L, 25L, 49L, 
-38L, 5L, 11L, 7L, 35L), class = "data.frame")
+"EXACT.MATCH", "FUZZY.MATCH"), row.names = c(NA, -9L), class = "data.frame")
 
+
+matches %>% pander
 ```
 
 
 
 
-
-```{r}
-
-library( igraph )
-
-```
 
 
 
 # Load Data
+
+We are going to use board data from a mid-sized US city in 2000. This network data has been generated through an iterative pair-wise comparison of board members across organizations. 
+
+*Thanks to Nara Yoon for sharing data from her dissertation project for this example.*
+
 
 ```{r, echo=F}
 
@@ -108,9 +156,6 @@ setwd( "C:/Users/jdlecy/Dropbox/00 - Nonprofit Open Data/08 - ARNOVA Website/arn
 source( "net_data_2000.R" )
 source( "attribute_data.R" )
 
-fuzzy.matches <- head( net.2000[ c("board.member.v1","board.member.v2") ], 50)
-
-dput( fuzzy.matches )
 
 ```
 
@@ -119,6 +164,7 @@ dput( fuzzy.matches )
 
 
 source( "https://raw.githubusercontent.com/lecy/arnova-2017-workshop/master/workshop/data/net_data_2000.R" )
+
 source( "https://raw.githubusercontent.com/lecy/arnova-2017-workshop/master/workshop/data/attribute_data.R" )
 
 ```
@@ -128,18 +174,19 @@ source( "https://raw.githubusercontent.com/lecy/arnova-2017-workshop/master/work
 
 # Network from Edgelist
 
+We will use the **graph_from_data_frame()** function in the igraph package to load our data as a network object. In this example, nodes represent nonprofits and each tie represents a board member. Two nonprofits can share multiple board members, which is reflected by the number of ties between nodes.
+
+We can see that when we connect all of the interlocking board members across the city some interesting structures emerge. 
+
 ```{r}
 
 
 # read in network ties plus attributes
 
-df <- net.2000[ c("org1","ein") ]
+df <- net.2000[ c("org1.ein","org2.ein") ]
 
 net <- graph_from_data_frame( d=df, vertices=att, directed=F ) 
 
-
-par( mar=c(0,0,0,0) )
-plot( net, edge.arrow.size=.5, vertex.size=4, vertex.label=NA )
 
 
 V(net)$size <- 4
@@ -157,169 +204,11 @@ plot( net, layout=layout_nicely(net) )
 
 
 
-# Plotting Graphs
 
-```{r}
 
 
 
-```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-```{r}
-
-# setwd( "C:/Users/jdlecy/Dropbox/00 - Nonprofit Open Data/08 - ARNOVA Website/Net Example" )
-# dat <- read.csv( "Albany Network Ties 1998-2015.csv" )
-
-dat <- read.csv( "https://www.dropbox.com/s/03bdwvpreth5ocw/Albany%20Network%20Ties%201998-2015.csv?dl=1", stringsAsFactors=F )
-
-
-
-dat.2000 <- dat[ dat$year == 2000 , ]
-
-
-
-
-board.members <- c( dat.2000$member1, dat.2000$name )
-eins <- c( dat.2000$org1, dat.2000$ein )
-
-length( unique( eins ))  # how many nonprofits in 2000 network? 
-
-# numbers of interlocking board members by nonprofit
-# 
-# tapply( board.members, eins, function(x){ length(unique(x)) } )
-
-table( tapply( board.members, eins, function(x){ length(unique(x)) } ) )
-
-
-
-```
-
-
-# Create Attributes File
-
-```{r}
-
-attributes <- read.csv( "https://www.dropbox.com/s/6ut1hrp3sz34ejs/Albany%20NCCS%20Plus%20Net%20Stats%201998-2015.csv?dl=1", stringsAsFactors=F )
-
-# att.2000 <- attributes[ attributes$FISYR == 2000 , ]  # this is missing too many cases
-
-keep.these <- unique( c(dat.2000$ein,dat.2000$org1) )
-
-att <- attributes[ attributes$EIN %in% keep.these , ]  # select all orgs from 2000 network
-
-att <- att[ c("EIN","NAME","NTMAJ5","NTMAJ10","NTMAJ12","MAJGRPB","RULEDATE","LEVEL1","LEVEL2","LEVEL3","LEVEL4") ] # select variables
-
-att <- att[ ! duplicated( att$EIN ),  ]  # drop duplicates
-
-head( att )
-
-att$AGE <- 2000 - att$RULEDATE
-att$AGE[ att$AGE < 1 ] <- 1
-att$AGE[ att$AGE > 100 ] <- median( att$AGE, na.rm=T )
-
-
-
-```
-
-
-
-
-
-## Display Layout Options
-
-```{r}
-
-
-
-layouts <- grep("^layout_", ls("package:igraph"), value=TRUE)[-1] 
-
-# Remove layouts that do not apply to our graph.
-
-layouts <- layouts[!grepl("bipartite|merge|norm|sugiyama|tree", layouts)]
-
-
-par(mfrow=c(3,3), mar=c(1,1,1,1))
-
-for (layout in layouts) {
-
-  print(layout)
-
-  l <- do.call(layout, list(net)) 
-
-  plot(net, edge.arrow.mode=0, layout=l, main=layout) }
-
-
-```
-
-
-
-
-
-# Subset by Edge Count
-
-```{r}
-
-summary( degree( net, mode="all" ) )  # centrality
-
-
-
-
-keep.these <- V(net)[ degree( net, mode="all" ) > 25 ]
-
-g.sub <- induced_subgraph( graph=net, vids=keep.these )
-
-par( mar=c(0,0,0,0) )
-plot( g.sub, layout=layout_with_kk(g.sub), 
-      edge.color="gray90", 
-      vertex.label=V(g.sub)$NAME, vertex.label.cex=0.5, vertex.label.dist=1, vertex.label.color="darkgray",
-      vertex.size=15*(degree(g.sub)/max(degree(g.sub)) ) )
-
-```
-
-
-# Subset by Group
-
-```{r}
-
-# list attributes
-
-summary( net )
-
-# print group levels
-
-head( V(net)$NTMAJ5 )
-
-
-# clean up spaces
-
-V(net)$NTMAJ5 <- gsub( " ", "", V(net)$NTMAJ5 )
-
-head( V(net)$NTMAJ5 )
-
-table( V(net)$NTMAJ5, useNA="ifany" )
-
-
-
-```
-
-
+## Subsector Graphs
 
 
 ```{r}
@@ -327,7 +216,7 @@ table( V(net)$NTMAJ5, useNA="ifany" )
 # scale between 2 and 14 for size
 
 V(net)$size <- 4 + 10*( degree( net, mode="all" ) / max(degree( net, mode="all" )) )
-
+V(net)$NTMAJ5 <- gsub( " ", "", V(net)$NTMAJ5 )
 
 keep.these <- V(net)$NTMAJ5 == "AR"
 keep.these[ is.na(keep.these) ] <- FALSE
@@ -364,19 +253,6 @@ V(net)[ keep.these ]$color <- "gray80"
 V(net)[ keep.these ]$frame.color <- "gray80"
 g.ot <- induced_subgraph( graph=net, vids=other )
 
-
-
-par( mar=c(0,0,0,0) )
-plot( net, layout=layout_nicely(net) )
-
-```
-
-
-
-## Plot Subsectors Separately
-
-
-```{r, fig.height=10}
 
 
 par( mar=c(0,0,2,0), mfrow=c(2,2) )
@@ -409,79 +285,7 @@ title( main="Health", line=0 )
 ```
 
 
-### Preserve Layout from Full Graph
 
-```{r, fig.height=10}
-
-net$layout <- layout_nicely(net)
-
-
-keep.these <- V(net)$NTMAJ5 == "AR"
-keep.these[ is.na(keep.these) ] <- FALSE
-arts <- V(net)[ keep.these ]
-V(net)[ keep.these ]$color <- "orange"
-V(net)[ keep.these ]$frame.color <- "orange"
-g.ar <- induced_subgraph( graph=net, vids=arts )
-g.ar$layout <- g.ar$layout[ keep.these, ]
-
-
-keep.these <- V(net)$NTMAJ5 == "HU"
-keep.these[ is.na(keep.these) ] <- FALSE
-V(net)[ keep.these ]$color <- "steelblue"
-V(net)[ keep.these ]$frame.color <- "steelblue"
-human.services <- V(net)[ keep.these ]
-g.hs <- induced_subgraph( graph=net, vids=human.services )
-g.hs$layout <- g.hs$layout[ keep.these, ]
-
-keep.these <- V(net)$NTMAJ5 == "ED"
-keep.these[ is.na(keep.these) ] <- FALSE
-V(net)[ keep.these ]$color <- "gray20"
-V(net)[ keep.these ]$frame.color <- "gray20"
-education <- V(net)[ keep.these ]
-g.ed <- induced_subgraph( graph=net, vids=education )
-g.ed$layout <- g.ed$layout[ keep.these, ]
-
-keep.these <- V(net)$NTMAJ5 == "HE"
-keep.these[ is.na(keep.these) ] <- FALSE
-V(net)[ keep.these ]$color <- "darkred"
-V(net)[ keep.these ]$frame.color <- "darkred"
-health <- V(net)[ keep.these ]
-g.he <- induced_subgraph( graph=net, vids=health )
-g.he$layout <- g.he$layout[ keep.these, ]
-
-keep.these <- V(net)$NTMAJ5 == "OT"
-keep.these[ is.na(keep.these) ] <- FALSE
-other <- V(net)[ keep.these ]
-V(net)[ keep.these ]$color <- "gray80"
-V(net)[ keep.these ]$frame.color <- "gray80"
-g.ot <- induced_subgraph( graph=net, vids=other )
-g.ot$layout <- g.ot$layout[ keep.these, ]
-
-
-
-par( mar=c(0,0,2,0), mfrow=c(2,2) )
-
-plot( g.hs, 
-      edge.color="gray50", 
-      vertex.label=NA )
-title( main="Human Services", line=0 )
-
-plot( g.ar, 
-      edge.color="gray50", 
-      vertex.label=NA )
-title( main="Arts", line=0 )
-
-plot( g.ed, 
-      edge.color="gray50", 
-      vertex.label=NA )
-title( main="Education", line=0 )
-
-plot( g.he, 
-      edge.color="gray50", 
-      vertex.label=NA )
-title( main="Health", line=0 )
-
-```
 
 
 
@@ -526,25 +330,48 @@ title( main="Health", line=0 )
 ```
 
 
-# Size by Attribute (AGE)
+
+
+# Show Only the Core
+
+```{r}
+
+keep.these <- V(net)[ degree( net, mode="all" ) > 25 ]
+
+g.sub <- induced_subgraph( graph=net, vids=keep.these )
+
+par( mar=c(0,0,0,0) )
+plot( g.sub, layout=layout_with_kk(g.sub), 
+      edge.color="gray90", 
+      vertex.label=V(g.sub)$NAME, vertex.label.cex=0.5, vertex.label.dist=1, vertex.label.color="darkgray",
+      vertex.size=15*(degree(g.sub)/max(degree(g.sub)) ) )
+
+```
+
+
+
+
+## Scale Size of Nodes by AGE
 
 ```{r}
 
 
 V(net)$AGE[ is.na( V(net)$AGE ) ] <- median( V(net)$AGE, na.rm=T )
 
-summary( V(net)$AGE )
-
 V(net)$size <- 1 + 10*( V(net)$AGE / max( V(net)$AGE ) )
-
+V(net)$color <- "orange"
 
 par( mar=c(0,0,0,0) )
 plot( net, layout=layout_nicely(net) )
 
 
-
-
 ```
+
+
+
+
+
+
 
 
 

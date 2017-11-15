@@ -1,10 +1,16 @@
 ---
-author: "Jesse Lecy"
 output:
   html_document:
+    df_print: paged
     theme: cerulean
     highlight: haddock
+    toc: yes
+    toc_float: yes
+    code_fold: hide
+    css: vignettes.css
 ---
+
+
 
 # Coding Gender of Nonprofit Leaders
 
@@ -14,6 +20,25 @@ knitr::opts_chunk$set( echo = TRUE, message=F, warning=F )
 
 ```
 
+
+```{r}
+
+library( pander )
+library( gender )
+library( dplyr )
+library( ggplot2 )
+
+
+# when first installing, you will be asked to build a local database of names
+# > gen <- gender( fn, method="ssa" )
+# Install the genderdata package? 
+# 
+# 1: Yes
+# 2: No
+# Selection:  <- TYPE "Yes"
+
+
+```
 
 
 
@@ -28,9 +53,9 @@ data.url <- "https://github.com/lecy/coding-gender-of-nonprofit-leaders/raw/mast
 
 dat <- readRDS( gzcon( url( data.url )))
 
-names( dat )
+nm <- toupper( dat$PersonNm )
 
-head( dat )
+head( nm, 10 )
 
 ```
 
@@ -42,12 +67,6 @@ There are no clear IRS formatting guidelines for submitting unstructured data li
 Here are some examples of using string processing functions in R to clean up some common problems with the data.
 
 ```{r}
-
-dat$PersonNm <- toupper( dat$PersonNm )
-
-nm <- dat$PersonNm
-
-head( nm, 100 )
 
 nm <- gsub( "SR ", "", nm, ignore.case=FALSE )
 nm <- gsub( "DR ", "", nm, ignore.case=FALSE )
@@ -91,26 +110,24 @@ x <- strsplit( nm, " " )
 
 first.names <- unlist( lapply( x, `[[`, 1 ) )
 
-head( first.names, 100 )
+head( first.names, 25 )
 
 
 dat$FirstName <- tolower( first.names )
 
 fn <- unique( tolower( first.names ) )
 
-length( fn ) # number of unique first names
+
 
 ```
 
 
+There are `r length( fn )` unique names in this dataset.
 
 
 
 
-# Coding Gender
-
-
-## The Gender Package in R
+# The Gender Package in R
 
 ### Usage
 
@@ -154,9 +171,9 @@ The countries for which datasets are being used. For the "ssa" and "ipums" metho
 
 
 
-# Example
+## Example
 
-### Load Some Data
+### Load Some Example Data
 
 ```{r, eval=T }
 
@@ -167,23 +184,15 @@ first.names <- c("dave", "glen", "beverly", "jennifer", "stacy", "lynn", "betty"
 
 ```
 
-### Categorize Names
+
+
+### Assigne Gender to Names
 
 ```{r}
 
-# install.packages( "gender" )
-
-library( gender )
+# library( gender )
 
 example.results <- gender(  first.names )
-
-# when first installing, you will be asked to build a local database of names
-# > gen <- gender( fn, method="ssa" )
-# Install the genderdata package? 
-# 
-# 1: Yes
-# 2: No
-# Selection:  <- TYPE "Yes"
 
 print( example.results, n=10 )
 
@@ -192,6 +201,8 @@ print( example.results, n=10 )
 
 
 ## Code Names from Compensation Data
+
+We will use method="ssa" here, which matches names in our data to the Social Security Administration birth certificate database, and will return the proportion of individuals with that first name that belong to each gender.
 
 ```{r}
 
@@ -212,7 +223,7 @@ print( gen, n=10 )
 
 You can add gender to the original dataset by merging results:
 
-```{r}
+```{r, eval=T}
 
 gen <- gen[ , 1:4 ]
 
@@ -243,9 +254,6 @@ dat$PersonNm[ ambiguous.cases ]
 
 
 
-
-
-
 # NAMES NOT FOUND
 
 no.gender <- dat$PersonNm[ is.na(dat$gender) ]
@@ -260,57 +268,8 @@ head( no.gender, 10 )
 
 # Comparing Compensation by Gender
 
-```{r}
-
-library( dplyr )
-
-options( scipen=8 )
-
-dat$gender[ dat$gender == "either" ] <- NA
-
-d2 <- dat[ dat$AvgHrs > 1 & dat$RptCmpOrg > 1 & dat$Org501c3 == 1 , ]
-
-
-summary( d2$RptCmpOrg[ d2$gender == "male" ] )
-
-hist( d2$RptCmpOrg[ d2$gender == "male" ], xlim=c(0,500000), 
-      breaks=seq(0,max(d2$RptCmpOrg,na.rm=T),10000), 
-      col="steelblue", border="white", yaxt="n", 
-      ylab="", xlab="Annual Salary", main="Compensation: Male" )
-
-
-
-
-summary( d2$RptCmpOrg[ d2$gender == "female" ] )
-
-hist( d2$RptCmpOrg[ d2$gender == "female" ], xlim=c(0,500000), 
-      breaks=seq(0,max(d2$RptCmpOrg,na.rm=T),10000), 
-      col="steelblue", border="white", yaxt="n", 
-      ylab="", xlab="Annual Salary", main="Compensation: Female" )
-
-
-
-
-# people with pay over $8 million
-
-filter( dat, RptCmpOrg > 8000000 )
-
-
-
-
-t.test( dat$RptCmpOrg ~ dat$gender )
-
-
-
-
-```
-
-
-### Comparing Density Plots
 
 ```{r}
-
-library(ggplot2)
 
 
 ggplot( dat[!is.na(dat$gender),], aes( x=log(RptCmpOrg), fill=gender )) + 
@@ -340,7 +299,7 @@ dat$TitleTxt <- toupper( dat$TitleTxt )
 
 title <- dat$TitleTxt
 
-head( title, 50 )
+head( title, 10 )
 
 length( unique( title ))  # 161,162 different titles used!!!
 
@@ -350,9 +309,6 @@ title <- gsub( "\\.", "", title )
 
 sort( table( title ) , T )[ 1:50 ] %>% names
 
-
-# to get list of titles
-# sort( table( title ) , T )[ 1:500 ] %>% names
 
 
 # PRESIDENT / CEO

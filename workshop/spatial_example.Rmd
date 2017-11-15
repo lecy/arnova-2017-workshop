@@ -9,6 +9,7 @@ output:
     toc: yes
     toc_float: yes
     code_fold: hide
+    css: vignettes.css    
 ---
 
 
@@ -392,3 +393,20 @@ legend( x = -85.79183 , y = 42.93 , pch = 20 , pt.cex = 1.4 , cex = .8 , xpd = N
         col = c( "#d10404", "#dd7804" , rgb( 10 , 95 , 193 , 94 , maxColorValue = 255 ) , 
                  rgb( 10 , 95 , 193 , 74 , maxColorValue = 255 ) ) )
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
