@@ -78,6 +78,8 @@ Although these tools are not trivial (R has a bit of a learning curve), they are
 * Uses nonprofits in Grand Rapids from the IRS Master File
 * Geocodes addresses using the **ggmap** package and Google Maps API
 * Visualizes spatial proximity using GIS tools in R
+* [Example Shiny app](https://fjsantam.shinyapps.io/cortland_census/) of census data from various years overlaid onto a map
+    + Github site for the Shiny app, including the raw code, can be found [here](https://github.com/fjsantam/Maxwell-R-Labs/tree/master/MPA_Workshop)
 
 
 #### [Board Network Example](https://lecy.github.io/arnova-2017-workshop/workshop/board_networks.html)
