@@ -1,8 +1,8 @@
 # Workshop Material
 
-This folder contains the markdown and data files from the 2017 ARNOVA pre-conference workshop on Open Data / Open Science for nonprofit research.
+This [**workshop folder**](https://github.com/lecy/arnova-2017-workshop/tree/master/workshop) contains the markdown and data files from the 2017 ARNOVA pre-conference workshop on Open Data / Open Science for nonprofit research.
 
-The **data** folder contains data used for the examples.
+The [**data**](https://github.com/lecy/arnova-2017-workshop/tree/master/workshop/data) folder contains data used for the examples.
 
 
 ## Necessary R Packages
@@ -18,10 +18,6 @@ workshop.packages <- c( "dplyr","geojsonio","ggmap","maps",
                         "extrafont","knitr" )
 
 install.packages( workshop.packages )
-
-# to install one at a time:
-# install.packages( "package.name" )
-
 
 ```
 
