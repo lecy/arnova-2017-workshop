@@ -93,6 +93,11 @@ Markdown was a simple convention developed to integrate regular text with comput
 See how the Urban Institute is using markdown files to automate report-generation:  
 [ <a href="/arnova-2017-workshop/workshop/urban_markdown_example.html">EXAMPLE</a> ].
 
+<br><br>
+Check out some of the [output format](http://rmarkdown.rstudio.com/formats.html) options R Markdown supports, such as publication-quality documents, [HTML web pages](http://rmarkdown.rstudio.com/rmarkdown_websites.html), [slide shows](http://mangothecat.github.io/rmdshower/skeleton.html), or [dashboards](http://rmarkdown.rstudio.com/flexdashboard/examples.html).
+
+<br><br>
+The [R Markdown Cheet Sheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf) is a useful reference.
 
 
 </p></div>
