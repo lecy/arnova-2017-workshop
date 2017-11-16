@@ -38,18 +38,22 @@ You do not need a degree in computer science or statistics to master some basic 
 Although these tools are not trivial (R has a bit of a learning curve), they are accessible and powerful. In general, I have found that it requires only one course for students to become conversant in R. After about 3 semesters they are proficient. *Fluency requires dating a computer.*
 
 
-#### Data Programming Languages
+#### [Data Programming Languages](https://lecy.github.io/arnova-2017-workshop/workshop/r_overview.html)
 
 * Why learn R? 
 
 
-#### Data-Driven Documents: Markdown Basics 
+#### [Data-Driven Documents: Markdown Basics](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 
 * Explains the basics of markdown documents
+* See some of the [interesting document formats](http://rmarkdown.rstudio.com/formats.html) that you can produce!
+   * [storyboard](https://beta.rstudioconnect.com/jjallaire/htmlwidgets-showcase-storyboard/htmlwidgets-showcase-storyboard.html) 
+   * [reveal.js presentations](http://rollingstones.vizzuality.com)  
+   * [shower presentations](http://mangothecat.github.io/rmdshower/skeleton.html)
+   * [This workshop website](https://lecy.github.io/arnova-2017-workshop/)
 
 
-
-#### Importing Data Through APIs
+#### [Importing Data Through APIs](https://lecy.github.io/arnova-2017-workshop/workshop/census_api_example.html)
 
 * How does an API work? 
 * Examples of useful R packages that leverage APIs
@@ -69,14 +73,16 @@ Although these tools are not trivial (R has a bit of a learning curve), they are
 * Uses compensation and board data from the IRS e-filer database
 
 
-#### Spatial Analysis Example
+#### [Spatial Analysis Example](https://lecy.github.io/arnova-2017-workshop/workshop/spatial_example.html)
 
 * Uses nonprofits in Grand Rapids from the IRS Master File
 * Geocodes addresses using the **ggmap** package and Google Maps API
 * Visualizes spatial proximity using GIS tools in R
+* [Example Shiny app](https://fjsantam.shinyapps.io/cortland_census/) of census data from various years overlaid onto a map
+    + Github site for the Shiny app, including the raw code, can be found [here](https://github.com/fjsantam/Maxwell-R-Labs/tree/master/MPA_Workshop)
 
 
-#### Board Network Example
+#### [Board Network Example](https://lecy.github.io/arnova-2017-workshop/workshop/board_networks.html)
 
 * Uses board data from the IRS e-filer database
 * Uses an approximate or fuzzy matching technique to reconcile names
@@ -94,7 +100,7 @@ Although these tools are not trivial (R has a bit of a learning curve), they are
 
 ------------------
 
-### OPEN NONPROFIT DATASETS
+### [OPEN NONPROFIT DATASETS](https://lecy.github.io/arnova-2017-workshop/OpenData/)
 
 
 #### NCCS Data
