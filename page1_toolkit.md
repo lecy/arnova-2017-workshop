@@ -1,6 +1,6 @@
 ---
 layout: page
-title:   *  Data Science Toolkit  *  
+title: Data Science Toolkit
 permalink: /Toolkit/
 ---
 
