@@ -14,7 +14,7 @@ permalink: /applications/
 
 <br>
 
-<p class="center light">These pages have been built using [R Markdown](http://rmarkdown.rstudio.com/) documents.</p>
+<p class="center light">These pages have been built using <a href="http://rmarkdown.rstudio.com/">R Markdown documents</a>.</p>
 
 
 <br>
