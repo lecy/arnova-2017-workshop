@@ -12,7 +12,7 @@ This page contains some tutorials on data science topics pertinent to nonprofit 
 
 ------
 
-## R Programming Fundamentals
+### R Programming Fundamentals
 
 *coming soon...*
 
@@ -24,7 +24,7 @@ This page contains some tutorials on data science topics pertinent to nonprofit 
 
 -----
 
-## Spatial Tools in R
+### Spatial Tools in R
 
 *coming soon...*
 
@@ -35,7 +35,7 @@ This page contains some tutorials on data science topics pertinent to nonprofit 
 
 ------
 
-## Regression Analysis in R
+### Regression Analysis in R
 
 *coming soon...*
 
@@ -47,7 +47,7 @@ This page contains some tutorials on data science topics pertinent to nonprofit 
 <br>
 -----
 
-## Text Analysis & Machine Learning
+### Text Analysis & Machine Learning
 
 *coming soon...*
 
