@@ -136,12 +136,12 @@ Marc Joffe has begum collecting all of the nonprofit audits in a [central reposi
 
 ### Additional Sources
 
-* New York Times API / Lexus Nexus for longitudinal text studies
-* Twitter API / Twitter statistical sample (contact Urban Institute)
-* Website text
-* Google Trends
-* Canadian tax data
-
+* New York Times API / Lexus Nexus for longitudinal text studies 
+* Twitter API / Twitter statistical sample (contact Urban Institute) 
+* Website text 
+* Google Trends 
+* Canadian tax data 
+ 
 <br>
 <br> 
 <br>
