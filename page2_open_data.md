@@ -60,11 +60,11 @@ The plan is to process all of the e-file data and make it freely available as CS
 ### Miscilaneous IRS Datasets
 
 The IRS has released a number of interesting datasets on nonprofit organizations. They are not always easy to find, in convenient formats to use, or especially well-documented. Examples include:
-
-* A database of all organizations that have lost their nonprofit status
-* A spreadsheet with data from the new 1023-EZ forms
-* 990-N postcard filers
-
+ 
+* A database of all organizations that have lost their nonprofit status  
+* A spreadsheet with data from the new 1023-EZ forms  
+* 990-N postcard filers  
+ 
 We have made efforts to catalog these sources and post them to the [Nonprofit Open Data Collective site](https://github.com/Nonprofit-Open-Data-Collective). Each dataset typically contains code that will help you extract data from obscure formats like ASCII files, and export it to reasonable formats like CSV or Stata. This exaple here is from the revocation database:
 
 ```r
